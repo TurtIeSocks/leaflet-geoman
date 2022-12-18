@@ -103,30 +103,6 @@ Draw.Circle = Draw.extend({
       }
     }
 
-    // add tooltip to hintmarker
-    if (this.options.tooltips) {
-      this._hintMarker
-        .bindTooltip(getTranslation('tooltips.startCircle'), {
-          permanent: true,
-          offset: L.point(0, 10),
-          direction: 'bottom',
-          opacity: 0.8,
-        })
-        .openTooltip();
-    }
-
-    // this is the hintline from the hint marker to the center marker
-    this._hintline = L.polyline([], this.options.hintlineStyle);
-    this._setPane(this._hintline, 'circlePane');
-    this._hintline._pmTempLayer = true;
-    this._layerGroup.addLayer(this._hintline);
-
-    // change map cursor
-    this._map._container.style.cursor = 'crosshair';
-
-    // create a polygon-point on click
-    this._map.on('click', this._placeCenterMarker, this);
-
     // sync hint marker with mouse cursor
     this._map.on('mousemove', this._syncHintMarker, this);
 
