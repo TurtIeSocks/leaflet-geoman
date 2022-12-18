@@ -68,7 +68,7 @@ Draw.Circle = Draw.extend({
 
       // this is the hintline from the hint marker to the center marker
       this._hintline = L.polyline([], this.options.hintlineStyle);
-      this._setPane(this._hintline, 'layerPane');
+      this._setPane(this._hintline, 'circlePane');
       this._hintline._pmTempLayer = true;
       this._layerGroup.addLayer(this._hintline);
 
@@ -83,7 +83,7 @@ Draw.Circle = Draw.extend({
 
       // this is the hintmarker on the mouse cursor
       this._hintMarker = L.circle([0, 0], this.options.templineStyle);
-      this._setPane(this._hintMarker, 'layerPane');
+      this._setPane(this._hintMarker, 'circlePane');
       this._hintMarker._pmTempLayer = true;
       this._hintMarker.addTo(this._map);
       // this is just to keep the snappable mixin happy
@@ -284,7 +284,7 @@ Draw.Circle = Draw.extend({
 
     // create marker
     const marker = L.circle(latlng, this.options.pathOptions);
-    this._setPane(marker, 'layerPane');
+    this._setPane(marker, 'circlePane');
     this._finishLayer(marker);
     // add marker to the map
     marker.addTo(this._map.pm._getContainingLayer());
