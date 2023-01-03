@@ -788,6 +788,8 @@ The following events are available on a layer instance:
 | Event         | Params | Description                                | Output                   |
 | :------------ | :----- | :----------------------------------------- | :----------------------- |
 | pm:textchange | `e`    | Fired when the text of a layer is changed. | `text`, `layer`, `shape` |
+| pm:textfocus  | `e`    | Fired when the text layer is focused.      | `layer`, `shape`         |
+| pm:textblur   | `e`    | Fired when the text layer is blurred.      | `layer`, `shape`         |
 
 For custom text styling get the HTMLElement and add CSS styles:
 
@@ -922,7 +924,7 @@ Change the language of user-facing copy in Leaflet-Geoman
 map.pm.setLang('de');
 ```
 
-Currently available languages are `cz`, `da`, `de`, `el`, `en`, `es`, `fa`, `fr`, `hu`, `id`, `it`, `ja`, `nl`, `no`, `pl`, `pt_br`, `ro`, `ru`, `sv`, `tr`, `ua`, `zh` and `zh_tw`.  
+Currently available languages are `cz`, `da`, `de`, `el`, `en`, `es`, `fa`, `fi`, `fr`, `hu`, `id`, `it`, `ja`, `ko`, `nl`, `no`, `pl`, `pt_br`, `ro`, `ru`, `sv`, `tr`, `ua`, `zh` and `zh_tw`.  
 To add translations to the plugin, you can add [a translation file](src/assets/translations) via Pull Request.
 
 You can also provide your own custom translations.
